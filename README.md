@@ -4,7 +4,7 @@ This repository contains the research code and presentation for **ACWS 2026**.
 
 ## Materials
 
-- [ACWS presentation](slides/Affect-Driven_Digital_Literacy.pptx)
+- [ACWS presentation · static HTML](slides/acws终.html)
 - [`Scraper.py`](Scraper.py): Playwright-based asynchronous crawling across Rednote and X
 - [`Analysis.py`](Analysis.py): sentiment analysis and structural topic modeling baseline
 
