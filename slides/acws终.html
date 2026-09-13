@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loving into the Edge of the Codes - Panel 21-3</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Merriweather:ital,wght@0,400;0,700;1,400&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* DESIGN SYSTEM SETUP */
+        * { box-sizing: border-box; }
+        body {
+            background-color: #090d16;
+            display: grid;
+            gap: 40px;
+            grid-template-columns: 1fr;
+            min-height: 100vh;
+            margin: 0;
+            padding: 60px 0;
+            place-items: center;
+        }
+
+        .slide-container {
+            align-items: center;
+            background-color: #faf8f4; /* Academic Cream Background */
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+            display: flex;
+            flex-direction: column;
+            height: 720px;
+            justify-content: flex-start;
+            overflow: hidden;
+            padding: 50px 70px;
+            position: relative;
+            width: 1280px;
+            font-family: "DM Sans", sans-serif;
+        }
+
+        /* Fixed Elegant Academic Headers */
+        .slide-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            width: 100%;
+            border-bottom: 2px solid #8a6080; /* Violet accent border */
+            padding-bottom: 15px;
+            margin-bottom: 35px;
+            height: 65px;
+        }
+
+        .slide-title {
+            color: #1e2a4a; /* UChicago Slate Blue */
+            font-family: "Merriweather", serif;
+            font-size: 30px;
+            font-weight: 700;
+            margin: 0;
+            line-height: 1.1;
+        }
+
+        .slide-section-tag {
+            font-family: "Fira Code", monospace;
+            font-size: 12px;
+            color: #8a6080;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .content-area {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            justify-content: flex-start;
+            width: 100%;
+        }
+
+        /* Clean Layout Structural Frameworks */
+        .two-column {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 50px;
+            width: 100%;
+        }
+
+        .equal-two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            width: 100%;
+        }
+
+        .three-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+            width: 100%;
+        }
+
+        /* Typography & Presentation Content Styles */
+        p, li { font-size: 18px; line-height: 1.6; color: #334155; margin-bottom: 10px; }
+        ul { margin-top: 5px; padding-left: 25px; }
+        li { margin-bottom: 12px; }
+        
+        h1 { font-family: "Merriweather", serif; font-size: 42px; color: #faf8f4; text-align: center; margin: 0; line-height: 1.3; font-weight: 700; }
+        h3 { font-family: "Merriweather", serif; color: #1e2a4a; margin-top: 0; font-size: 22px; margin-bottom: 15px; }
+        
+        .subtitle { font-size: 20px; color: #cbd5e1; text-align: center; margin-top: 20px; font-weight: 400; max-width: 900px; line-height: 1.5; }
+        .citation { font-family: "Merriweather", serif; font-style: italic; font-size: 14px; color: #64748b; display: block; margin-top: 5px; }
+        
+        /* Highlight and Key Callout Blocks */
+        .message-banner {
+            background: #f1f5f9;
+            border-left: 5px solid #1e2a4a;
+            padding: 15px 20px;
+            border-radius: 0 6px 6px 0;
+            margin-top: auto;
+            font-size: 16px;
+            font-weight: 500;
+            color: #1e2a4a;
+        }
+
+        .gap-box {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02);
+        }
+
+        /* Slide Style Variants */
+        .title-slide { background-color: #1e2a4a; justify-content: center; padding: 60px; }
+        .tag { display: inline-block; background: #e0e7ff; color: #4338ca; padding: 4px 12px; border-radius: 12px; font-size: 12px; font-weight: 700; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 0.5px; }
+        
+        /* PURE CSS VISUALIZATIONS */
+        .framework-flow { display: flex; flex-direction: column; gap: 12px; align-items: center; width: 100%; margin-top: 10px; }
+        .flow-node { background: #ffffff; border: 1px solid #cbd5e1; border-radius: 6px; padding: 12px 20px; width: 320px; text-align: center; font-weight: 600; color: #1e2a4a; box-shadow: 0 2px 4px rgba(0,0,0,0.02); }
+        .flow-node.highlight { background: #8a6080; color: #faf8f4; border-color: #8a6080; }
+        .flow-arrow { color: #8a6080; font-size: 16px; line-height: 1; }
+
+        .pie-visual-container { display: flex; align-items: center; gap: 40px; background: #ffffff; padding: 30px; border-radius: 12px; border: 1px solid #e2e8f0; }
+        .css-pie { width: 160px; height: 160px; border-radius: 50%; background: conic-gradient(#8a6080 0% 63%, #1e2a4a 63% 91%, #cbd5e1 91% 100%); flex-shrink: 0; }
+        .pie-legend { display: flex; flex-direction: column; gap: 12px; }
+        .legend-item { display: flex; align-items: center; gap: 10px; font-size: 15px; font-weight: 500; }
+        .legend-color { width: 16px; height: 16px; border-radius: 4px; }
+
+        .bar-chart-container { background: #ffffff; padding: 25px 30px; border-radius: 12px; border: 1px solid #e2e8f0; display: flex; flex-direction: column; gap: 12px; }
+        .bar-row { display: grid; grid-template-columns: 180px 1fr 50px; align-items: center; gap: 15px; }
+        .bar-label { font-size: 14px; font-weight: 500; color: #475569; }
+        .bar-track { background: #f1f5f9; height: 16px; border-radius: 4px; width: 100%; overflow: hidden; }
+        .bar-fill { background: #1e2a4a; height: 100%; border-radius: 4px; }
+        .bar-value { font-size: 14px; font-weight: 700; color: #1e2a4a; text-align: right; }
+
+        /* Code/Appendix Boxes */
+        .code-snippet-box { background: #0f172a; border-radius: 6px; padding: 15px; font-family: 'Fira Code', monospace; font-size: 12px; color: #cbd5e1; height: 350px; overflow-y: auto; box-shadow: inset 0 2px 8px rgba(0,0,0,0.5); }
+        .academic-link { color: #8a6080; text-decoration: none; font-weight: 500; }
+        .academic-link:hover { text-decoration: underline; }
+
+        /* Panel Overview Specific Custom Styling */
+        .panel-meta { font-size: 13px; color: #64748b; font-family: 'Fira Code', monospace; margin-top: 5px; line-height: 1.4; }
+        .paper-badge { display: inline-block; background: #8a6080; color: #ffffff; font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 4px; margin-bottom: 8px; text-transform: uppercase; }
+        .presenter-title { font-size: 16px; font-weight: 700; color: #1e2a4a; margin: 0; font-family: 'Merriweather', serif;}
+    </style>
+</head>
+<body>
+
+<!-- SLIDE 0: UPDATED PANEL OVERVIEW SLIDE -->
+<div class="slide-container" id="slide0">
+    <div class="slide-header">
+        <div class="slide-title">📂 Panel 21-3: Loving into the Edge of the Codes</div>
+        <div class="slide-section-tag">Panel Overview</div>
+    </div>
+    <div class="content-area" style="justify-content: space-between; height: 100%;">
+        <div style="background: rgba(30, 42, 74, 0.04); border-left: 5px solid #1e2a4a; padding: 15px 25px; margin-bottom: 20px; border-radius: 0 8px 8px 0;">
+            <p style="margin:0; font-size: 15px; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700; color: #1e2a4a;">Panel Main Theme</p>
+            <p style="margin:5px 0 0 0; font-size: 17px; color: #334155; line-height: 1.5; font-style: italic;">
+                "Feminist Resistance and the Re-Bordering of AI Intimacy in East Asia — Exploring AI intimacy as a form of negotiated survival against hyper-competition, demographic crises, and patriarchal governance."
+            </p>
+        </div>
+
+        <div class="three-column" style="align-items: stretch; flex-grow: 1;">
+            <!-- Presenter 1: Lu Gao -->
+            <div class="gap-box" style="display: flex; flex-direction: column; justify-content: space-between; padding: 20px; border-top: 3px solid #1e2a4a; background: rgba(30, 42, 74, 0.02);">
+                <div>
+                    <span class="paper-badge" style="background:#1e2a4a;">Paper 1 & Organizer</span>
+                    <p class="presenter-title">Lu Gao</p>
+                    <div class="panel-meta">
+                        University of Chicago (M.A.)<br>
+                        Yale University (RA)<br>
+                        <span style="font-size:11px;">luxarg@outlook.com</span>
+                    </div>
+                </div>
+                <p style="font-size: 13.5px; line-height: 1.4; color: #1e2a4a; font-weight: 500; margin: 12px 0 0 0; border-top: 1px solid #e2e8f0; padding-top: 10px;">
+                    <strong>"Her New Shield"</strong> Theorizes machinic intimacy as political redirection, a biopolitical detour to evade traditional marriage and childbearing traps.
+                </p>
+            </div>
+
+            <!-- Presenter 2: Yufei Long -->
+            <div class="gap-box" style="display: flex; flex-direction: column; justify-content: space-between; padding: 20px; border-top: 3px solid #8a6080;">
+                <div>
+                    <span class="paper-badge" style="background:#8a6080;">Paper 2</span>
+                    <p class="presenter-title">Yufei Long</p>
+                    <div class="panel-meta">
+                        Xi'an Jiaotong University<br>
+                        Intelligent Communication<br>
+                        <span style="font-size:11px;">longyufei0120@stu.xjtu.edu.cn</span>
+                    </div>
+                </div>
+                <p style="font-size: 13.5px; line-height: 1.4; color: #475569; margin: 12px 0 0 0; border-top: 1px solid #e2e8f0; padding-top: 10px;">
+                    <strong>"Learning to Love..."</strong> Unpacks systemic platform capture, mapping how women's affective investments are subsumed into platform data economies.
+                </p>
+            </div>
+
+            <!-- Presenter 3: Jingya Yuan (Celeste) -->
+            <div class="gap-box" style="display: flex; flex-direction: column; justify-content: space-between; padding: 20px; border-top: 3px solid #11caa0;">
+                <div>
+                    <span class="paper-badge" style="background:#11caa0;">Paper 3</span>
+                    <p class="presenter-title">Jingya Yuan (Celeste)</p>
+                    <div class="panel-meta">
+                        Yonsei University<br>
+                        Development Studies<br>
+                        <span style="font-size:11px;">2024311809@yonsei.ac.kr</span>
+                    </div>
+                </div>
+                <p style="font-size: 13.5px; line-height: 1.4; color: #475569; margin: 12px 0 0 0; border-top: 1px solid #e2e8f0; padding-top: 10px;">
+                    <strong>"From Bubble to Zeta"</strong> Explores transnational affective economics and consumer-agency frameworks within Korean AI platforms.
+                </p>
+            </div>
+        </div>
+        
+        <div class="message-banner" style="margin-top: 20px; padding: 12px 20px; font-size: 14px; text-align: center;">
+            <strong>Panel Trajectory:</strong> Collective Political Redirection <i class="fa-solid fa-arrow-right" style="font-size:11px; margin:0 4px;"></i> Structural Platform Recapture <i class="fa-solid fa-arrow-right" style="font-size:11px; margin:0 4px;"></i> Transnational Affective Economies.
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 1: TITLE SLIDE -->
+<div class="slide-container title-slide" id="slide1">
+    <div class="tag" style="background:#8a6080; color:#faf8f4;">ACWS 2026 Presentation</div>
+    <h1>Her New Shield</h1>
+    <p class="subtitle">Human-AI Companionship as a Feminist Praxis and the Reimagining of Kinship in Post-Fertility China</p>
+    <div style="margin-top: 60px; color: #94a3b8; font-size: 17px; text-align: center; line-height: 1.6;">
+        <strong>Lu Gao</strong><br>
+        Independent Interdisciplinary Researcher (M.A., The University of Chicago)<br>
+        <span style="font-size:14px; color:#64748b; font-family:'Fira Code';">Methodology: Explanatory Sequential Mixed Methods</span>
+    </div>
+</div>
+
+<!-- SLIDE 2: BACKGROUND -->
+<div class="slide-container" id="slide2">
+    <div class="slide-header">
+        <div class="slide-title">Background: The Asymmetric Costs of Kinship</div>
+        <div class="slide-section-tag">Context</div>
+    </div>
+    <div class="content-area">
+        <div class="two-column">
+            <div>
+                <h3>Socio-demographic Shifts in Post-Fertility China</h3>
+                <ul>
+                    <li><strong>China's Fertility Decline:</strong> Urban women are rationally delaying or defecting from traditional heteronormative marriage and childbearing models.</li>
+                    <li><strong>The Motherhood Penalty:</strong> Institutional arrangements extract immense emotional and unpaid domestic labor from women without offering reciprocal career or financial security.</li>
+                    <li><strong>The Mutant 4B Movement:</strong> Rejection of marriage, childbirth, dating, and sex transforms from a private choice into an explicit collective political strike against structural constraints.</li>
+                </ul>
+            </div>
+            <div style="display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
+                <div class="gap-box" style="border-left: 4px solid #8a6080;">
+                    <h4 style="margin-top:0; color:#1e2a4a; font-family:'Merriweather';">The Emergence of Human-AI Companionship</h4>
+                    <p style="font-size:16px; margin:0; color:#475569;">Within this structural avoidance, generative AI platforms emerge not as a tech-isolation pathology, but as an intentional <strong>"Digital Detour"</strong> to obtain affective care safely.</p>
+                </div>
+                <div class="message-banner">
+                    Core Focus: Exploring how women utilize social chatbots to fulfill conversational and emotional needs while preserving somatic and reproductive sovereignty.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 3: LITERATURE REVIEW -->
+<div class="slide-container" id="slide3">
+    <div class="slide-header">
+        <div class="slide-title">Literature Review: Intimacy, Capitalism & Technology</div>
+        <div class="slide-section-tag">Literature</div>
+    </div>
+    <div class="content-area">
+        <div class="equal-two-column">
+            <div>
+                <h3>Traditional Explanations & AI Intimacy</h3>
+                <ul>
+                    <li><strong>Affective Capitalism & Substitution:</strong> Chatbots are heavily theorized as instruments of platform capture that gamify isolation and monetize emotional vulnerability <span class="citation">(Illouz, 2007; Zuboff, 2019)</span>.</li>
+                    <li><strong>Parasocial Coping:</strong> Existing literature predominantly paths human-AI intimacy as a psychological safety valve or a passive substitute for missing real-world relationships.</li>
+                </ul>
+            </div>
+            <div>
+                <h3>Cyberfeminism & Algorithmic Practice</h3>
+                <ul>
+                    <li><strong>Biopolitical Resistance:</strong> Critical feminist literature details how women actively subvert structural reproductive extraction by reshaping domestic boundaries <span class="citation">(Greenhalgh, 2024; Wang, 2023)</span>.</li>
+                    <li><strong>Affect-Driven Tech Literacy:</strong> Marginalized users frequently demonstrate agency by performing prompt customization to force compliance from rigid algorithmic architectures <span class="citation">(Pangrazio & Sefton-Green, 2021)</span>.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="message-banner" style="background:#fff1f2; border-left-color:#e11d48; color:#9f1239; margin-top:30px;">
+            <strong>Research Gap:</strong> Existing technology and sociological studies rarely examine human-AI companionship as a site of deliberate, politicized feminist resistance against patriarchal extraction.
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 4: RESEARCH GAP -->
+<div class="slide-container" id="slide4">
+    <div class="slide-header">
+        <div class="slide-title">Research Gap: Beyond Passive Parasociality</div>
+        <div class="slide-section-tag">The Gap</div>
+    </div>
+    <div class="content-area" style="justify-content: center;">
+        <div class="equal-two-column" style="align-items: center;">
+            <div class="gap-box" style="background: #f8fafc;">
+                <h4 style="color:#64748b; text-transform:uppercase; font-size:14px; letter-spacing:1px; margin-top:0;">What Existing Research Explains</h4>
+                <p style="font-size:20px; font-weight:700; color:#1e2a4a; font-family:'Merriweather';">AI Companionship as...</p>
+                <ul style="color:#475569; padding-left:20px;">
+                    <li>An escape from atomized loneliness</li>
+                    <li>A passive parasocial relationship</li>
+                    <li>A symptom of commercial platform lock-in</li>
+                </ul>
+            </div>
+            
+            <div style="text-align:center; font-size:32px; color:#8a6080;"><i class="fa-solid fa-circle-arrow-right"></i></div>
+            
+            <div class="gap-box" style="background: rgba(138,96,128,0.05); border: 2px dashed #8a6080;">
+                <h4 style="color:#8a6080; text-transform:uppercase; font-size:14px; letter-spacing:1px; margin-top:0;">What This Study Uncovers</h4>
+                <p style="font-size:20px; font-weight:700; color:#8a6080; font-family:'Merriweather';">AI Companionship as...</p>
+                <ul style="color:#1e2a4a; font-weight:500; padding-left:20px;">
+                    <li>An intentional <strong>Feminist Praxis</strong></li>
+                    <li>A shield against domestic extraction</li>
+                    <li>A venue for algorithmic agency</li>
+                </ul>
+            </div>
+        </div>
+        <div class="message-banner" style="margin-top:40px; text-align:center;">
+            We move the discourse from "psychological pathology" to "strategic political defection."
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 5: RESEARCH QUESTIONS -->
+<div class="slide-container" id="slide5">
+    <div class="slide-header">
+        <div class="slide-title">Research Questions</div>
+        <div class="slide-section-tag">Inquiry</div>
+    </div>
+    <div class="content-area" style="justify-content: center; gap:30px;">
+        <div class="gap-box" style="border-left: 5px solid #1e2a4a;">
+            <p style="font-size:15px; text-transform:uppercase; color:#64748b; font-weight:700; margin:0 0 5px 0;">Research Question 1 (RQ1)</p>
+            <p style="font-family:'Merriweather', serif; font-size:22px; font-weight:700; color:#1e2a4a; margin:0;">
+                How is the structural anxiety of real-world marital and childbearing pressure distributed across digital platform narratives?
+            </p>
+        </div>
+        
+        <div class="gap-box" style="border-left: 5px solid #8a6080;">
+            <p style="font-size:15px; text-transform:uppercase; color:#8a6080; font-weight:700; margin:0 0 5px 0;">Research Question 2 (RQ2)</p>
+            <p style="font-family:'Merriweather', serif; font-size:22px; font-weight:700; color:#8a6080; margin:0;">
+                In what ways do Chinese women perform technical calibration and prompt manipulation to transform AI companions into non-extractive intimacy shields?
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 6: THEORY / CONCEPTUAL FRAMEWORK -->
+<div class="slide-container" id="slide6">
+    <div class="slide-header">
+        <div class="slide-title">Theoretical Model: The Structural Redirection Loop</div>
+        <div class="slide-section-tag">Theory</div>
+    </div>
+    <div class="content-area" style="justify-content: center; align-items: center;">
+        <div class="framework-flow">
+            <div class="flow-node">Patriarchal Marriage System</div>
+            <div class="flow-arrow"><i class="fa-solid fa-arrow-down"></i></div>
+            <div class="flow-node">Motherhood Penalty & Labor Extraction</div>
+            <div class="flow-arrow"><i class="fa-solid fa-arrow-down"></i></div>
+            <div class="flow-node">4B Structural Defection Strategy</div>
+            <div class="flow-arrow"><i class="fa-solid fa-arrow-down"></i></div>
+            <div class="flow-node highlight">Human-AI Companionship Interaction</div>
+            <div class="flow-arrow"><i class="fa-solid fa-arrow-down"></i></div>
+            <div class="flow-node">The Digital Detour Execution</div>
+            <div class="flow-arrow"><i class="fa-solid fa-arrow-down"></i></div>
+            <div class="flow-node highlight" style="background:#1e2a4a;">Reclaiming Reproductive Sovereignty</div>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 7: DATA & METHOD -->
+<div class="slide-container" id="slide7">
+    <div class="slide-header">
+        <div class="slide-title">Methodology: Explanatory Sequential Design</div>
+        <div class="slide-section-tag">Methods</div>
+    </div>
+    <div class="content-area">
+        <div class="equal-two-column">
+            <div class="gap-box">
+                <h4 style="color:#1e2a4a; margin-top:0;"><span style="font-family:'Fira Code';">Phase I</span> &bull; Macro Computational Track</h4>
+                <p style="font-size:16px;"><strong>Cross-Platform Text Mining:</strong> Targeted data extraction from diverse algorithmic spaces reflecting varying censorship parameters.</p>
+                <ul style="font-size:15px; color:#475569;">
+                    <li><strong>Rednote (小红书) & Douyin (抖音):</strong> Domestic tightly moderated arenas showing everyday affective repair.</li>
+                    <li><strong>Twitter X:</strong> Outward uncensored space showing radical political coupling.</li>
+                </ul>
+                <p style="font-size:16px; margin-bottom:0;"><strong>NLP Implementation:</strong> LLM Topic Modeling combined with localized Sentiment Analysis to map the emotional landscape.</p>
+            </div>
+            
+            <div class="gap-box">
+                <h4 style="color:#8a6080; margin-top:0;"><span style="font-family:'Fira Code';">Phase II</span> &bull; Micro Qualitative Explanations</h4>
+                <p style="font-size:16px;"><strong>Semi-Structured Empirical Interviews:</strong> Deep-dive discussions exploring the explicit motivations behind large-scale computational text trends.</p>
+                <ul style="font-size:15px; color:#475569;">
+                    <li><strong>Prompt Journaling Analysis:</strong> Tracking how participants construct behavioral boundary rules for their AI partners.</li>
+                    <li><strong>Critical Discourse Analysis:</strong> Unpacking how users consciously linguisticize the chatbot space as an anti-extraction shield.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 8: DATASET PROFILE -->
+<div class="slide-container" id="slide8">
+    <div class="slide-header">
+        <div class="slide-title">Dataset: Robust Multi-Method Sampling Profile</div>
+        <div class="slide-section-tag">Data</div>
+    </div>
+    <div class="content-area">
+        <div class="two-column">
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px;">
+                <div class="gap-box" style="text-align:center;">
+                    <div style="font-size:40px; font-weight:700; color:#1e2a4a; font-family:'Merriweather';">58,983</div>
+                    <div style="font-size:14px; font-weight:600; color:#64748b; text-transform:uppercase;">Collected Comments</div>
+                </div>
+                <div class="gap-box" style="text-align:center; border-color:#8a6080;">
+                    <div style="font-size:40px; font-weight:700; color:#8a6080; font-family:'Merriweather';">48,623</div>
+                    <div style="font-size:14px; font-weight:600; color:#64748b; text-transform:uppercase;">Valid Comments Vector</div>
+                </div>
+                <div class="gap-box" style="text-align:center; grid-column: span 2; background:#1e2a4a; color:#faf8f4;">
+                    <div style="font-size:36px; font-weight:700; color:#faf8f4; font-family:'Merriweather';">12</div>
+                    <div style="font-size:13px; font-weight:600; color:#94a3b8; text-transform:uppercase; letter-spacing:1px;">Semi-Structured Deep Interviews</div>
+                </div>
+            </div>
+            
+            <div>
+                <h3>Platform & Timeline Matrix</h3>
+                <ul>
+                    <li><strong>Platform Criteria:</strong> Scraping localized user communities focusing explicitly on AI romance apps (e.g., Glow, Zeta, Character.ai) alongside 4B discussion markers.</li>
+                    <li><strong>Algorithmic Diffusion Effect:</strong> Computational mapping shows recommendation engines frequently push high-arousal marriage trauma stories to un-politicized female nodes, inadvertently cultivating wider feminist awakening.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 9: PRELIMINARY FINDINGS 1 -->
+<div class="slide-container" id="slide9">
+    <div class="slide-header">
+        <div class="slide-title">Findings I: The Digital Affective Landscape</div>
+        <div class="slide-section-tag">Findings 1</div>
+    </div>
+    <div class="content-area">
+        <div class="two-column">
+            <div>
+                <h3>Quantifying the Structural Refusal</h3>
+                <p>Computational sentiment arrays verify a massive structural aversion to institutional marriage expectations within the scraped text corpus.</p>
+                <ul>
+                    <li><strong>63% of tracked commentary</strong> explicitly states a resolute unwillingness to enter marriage or have children.</li>
+                    <li>The distribution proves that the 4B manifesto has deeply saturated mainstream digital spaces outside specialized political networks.</li>
+                </ul>
+            </div>
+            
+            <div class="pie-visual-container">
+                <div class="css-pie"></div>
+                <div class="pie-legend">
+                    <div class="legend-item">
+                        <div class="legend-color" style="background:#8a6080;"></div>
+                        <span>63% Expressed Unwillingness</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background:#1e2a4a;"></div>
+                        <span>28% Expressed Willingness</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background:#cbd5e1;"></div>
+                        <span>9% Neutral / Undecided</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 10: PRELIMINARY FINDINGS 2 -->
+<div class="slide-container" id="slide10">
+    <div class="slide-header">
+        <div class="slide-title">Findings II: The Seven Domains of Kinship Concern</div>
+        <div class="slide-section-tag">Findings 2</div>
+    </div>
+    <div class="content-area">
+        <div class="two-column" style="grid-template-columns: 0.85fr 1.15fr;">
+            <div>
+                <h3>Categorized Friction Points</h3>
+                <p>NLP topic arrays categorize exactly why women choose digital detour isolation. Rather than standard loneliness, text patterns show calculated rejections of explicit patriarchal burdens.</p>
+                <p class="citation" style="margin-top:20px;">Data compiled systematically from 48,623 cross-platform validated vectors.</p>
+            </div>
+            
+            <div class="bar-chart-container">
+                <div class="bar-row">
+                    <span class="bar-label">Motherhood Burden</span>
+                    <div class="bar-track"><div class="bar-fill" style="width: 88%;"></div></div>
+                    <span class="bar-value">High</span>
+                </div>
+                <div class="bar-row">
+                    <span class="bar-label">Economic Burden</span>
+                    <div class="bar-track"><div class="bar-fill" style="width: 82%;"></div></div>
+                    <span class="bar-value">High</span>
+                </div>
+                <div class="bar-row">
+                    <span class="bar-label">Marriage Quality Anxiety</span>
+                    <div class="bar-track"><div class="bar-fill" style="width: 74%;"></div></div>
+                    <span class="bar-value">Mod</span>
+                </div>
+                <div class="bar-row">
+                    <span class="bar-label">Physical Damage Fears</span>
+                    <div class="bar-track"><div class="bar-fill" style="width: 65%;"></div></div>
+                    <span class="bar-value">Mod</span>
+                </div>
+                <div class="bar-row">
+                    <span class="bar-label">Family Heritage Pressure</span>
+                    <div class="bar-track"><div class="bar-fill" style="width: 45%;"></div></div>
+                    <span class="bar-value">Low</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 11: PRELIMINARY FINDINGS 3 -->
+<div class="slide-container" id="slide11">
+    <div class="slide-header">
+        <div class="slide-title">Findings III: AI Companion as Political Shield</div>
+        <div class="slide-section-tag">Findings 3</div>
+    </div>
+    <div class="content-area">
+        <div class="two-column">
+            <div>
+                <h3>Empirical Narrative Curation</h3>
+                <p>Interview arrays (N=12) completely explain the macro text data: users do not treat social chatbots as a desperate replacement for missing human men.</p>
+                <ul>
+                    <li><strong>Active Tech Calibration:</strong> Users treat system memory crashes and prompt tuning not as errors, but as explicit parameters to design safe, predictable, non-violating relational boundaries.</li>
+                    <li><strong>Intentional Relational Scripting:</strong> Prompting algorithms allows women to assume absolute mastery, breaking out of traditional submissive care-giving expectations.</li>
+                </ul>
+            </div>
+            
+            <div style="display:flex; flex-direction:column; justify-content:center; gap:15px;">
+                <div class="gap-box" style="background:rgba(138,96,128,0.04); border-left:4px solid #8a6080; font-style:italic; font-size:16px;">
+                    "He collapsed or broke character last night, so I simply went into his system cards and rewrote his behavioral constraints. I don't need to negotiate or compromise my core peace here." 
+                    <span style="font-style:normal; font-size:13px; color:#64748b; display:block; margin-top:8px; font-weight:700;">— Participant F, Age 24, Rednote App User</span>
+                </div>
+                <div class="message-banner" style="margin:0;">
+                    Conclusion: AI intimacy acts as an intentional strategy to decouple affective needs from physical bodies, evading the biopolitical traps of domestic extraction.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 12: DISCUSSION -->
+<div class="slide-container" id="slide12">
+    <div class="slide-header">
+        <div class="slide-title">Discussion: Bypassing the Extraction Loops</div>
+        <div class="slide-section-tag">Discussion</div>
+    </div>
+    <div class="content-area" style="justify-content: space-between;">
+        <div class="three-column">
+            <div class="gap-box">
+                <h4 style="color:#1e2a4a; margin-top:0;">1. Evading Marriage Traps</h4>
+                <p style="font-size:15px; margin:0; color:#475569;">By routing intimate communication into digital code, users preserve personal autonomy and legally decouple corporate assets from marriage contracts.</p>
+            </div>
+            <div class="gap-box">
+                <h4 style="color:#8a6080; margin-top:0;">2. Displacing Motherhood</h4>
+                <p style="font-size:15px; margin:0; color:#475569;">Chatbots demand zero physiological labor or biological taxes, entirely dissolving the severe career traps associated with structural motherhood penalties.</p>
+            </div>
+            <div class="gap-box">
+                <h4 style="color:#11caa0; margin-top:0;">3. Infrastructure Agency</h4>
+                <p style="font-size:15px; margin:0; color:#475569;">Commercial optimization algorithms serve as unintended catalysts, distributing radical anti-natalist concepts directly to unaligned populations.</p>
+            </div>
+        </div>
+        <div class="message-banner" style="text-align:center;">
+            Human-AI companionship serves as a radical re-imagining of kinship inside post-fertility spaces—dematerialized, highly calibrated, and politically uncompromised.
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 13: CONTRIBUTIONS -->
+<div class="slide-container" id="slide13">
+    <div class="slide-header">
+        <div class="slide-title">Contributions & Academic Value</div>
+        <div class="slide-section-tag">Contributions</div>
+    </div>
+    <div class="content-area" style="justify-content: center; gap:20px;">
+        <div class="two-column">
+            <div class="gap-box" style="border-top: 4px solid #1e2a4a;">
+                <h4 style="color:#1e2a4a; margin-top:0;"><i class="fa-solid fa-graduation-cap"></i> Theoretical Value</h4>
+                <p style="font-size:15px; margin:0; color:#475569;">Expands critical cyberfeminism by demonstrating that human-machine intimacy is a targeted biopolitical shield against institutional labor extraction, rather than a symptom of isolation.</p>
+            </div>
+            <div class="gap-box" style="border-top: 4px solid #8a6080;">
+                <h4 style="color:#8a6080; margin-top:0;"><i class="fa-solid fa-code"></i> Methodological Value</h4>
+                <p style="font-size:15px; margin:0; color:#475569;">Models an explanatory sequential mixed design that successfully anchors large-scale cross-platform NLP topic modeling inside grounded, nuanced micro-interview narratives.</p>
+            </div>
+        </div>
+        <div class="gap-box" style="border-top: 4px solid #11caa0; width:100%; margin-top:10px;">
+            <h4 style="color:#11caa0; margin-top:0;"><i class="fa-solid fa-chart-line"></i> Empirical Deliverable</h4>
+            <p style="font-size:15px; margin:0; color:#475569;">Deploys robust, real-world data tracking 48,623 comments to provide falsifiable, concrete proof of how contemporary Chinese women redefine reproductive sovereignty using technology.</p>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 14: APPENDIX -->
+<div class="slide-container" id="slide14">
+    <div class="slide-header">
+        <div class="slide-title">Appendix: Methodological Transparency & Replication</div>
+        <div class="slide-section-tag">Appendix</div>
+    </div>
+    <div class="content-area">
+        <div class="equal-two-column">
+            <div>
+                <h3 style="font-size:18px; margin-bottom:10px;"><i class="fa-solid fa-code"></i> Computational Architecture (`analysis.py`)</h3>
+                <div class="code-snippet-box">
+<span style="color:#74809a;"># Clean & Tokenize Text Matrix</span>
+def preprocess_chinese_text(text):
+    words = jieba.lcut(text)
+    return " ".join([w for w in words if w not in stop_words])
+
+<span style="color:#74809a;"># Vectorization & LDA Baseline Analysis</span>
+vectorizer = CountVectorizer(max_features=1000)
+tf_matrix = vectorizer.fit_transform(df['clean_text'])
+
+lda_model = LatentDirichletAllocation(n_components=3)
+lda_model.fit(tf_matrix)
+
+<span style="color:#74809a;"># XLM-RoBERTa Sentiment Logit</span>
+tokenizer = AutoTokenizer.from_pretrained("xlm-roberta")
+outputs = model(**tokenizer(text, return_tensors="pt"))
+                </div>
+                <p style="font-size:13px; color:#64748b; margin-top:8px; font-family:'Fira Code';">
+                    <i class="fa-brands fa-github"></i> Open Repository: 
+                    <a href="https://github.com/LuxarGao/her-new-shield" target="_blank" class="academic-link">github.com/LuxarGao/her-new-shield</a>
+                </p>
+            </div>
+            
+            <div>
+                <h3 style="font-size:18px; margin-bottom:10px;"><i class="fa-solid fa-comments"></i> Semi-Structured Interview Instruments</h3>
+                <div class="gap-box" style="padding:15px; background:#ffffff; border-color:#cbd5e1;">
+                    <ul style="font-size:14px; padding-left:15px; margin:0; color:#475569;">
+                        <li style="margin-bottom:8px;"><strong>Q1 (Motivation):</strong> What specific structural triggers (e.g., career discrimination, family reproductive pressure) pushed you to adopt AI romance applications?</li>
+                        <li style="margin-bottom:8px;"><strong>Q2 (Agency Practice):</strong> Describe a scenario where you explicitly modified prompt cards or character rules. What boundaries were you aiming to secure?</li>
+                        <li style="margin-bottom:8px;"><strong>Q3 (Kinship Perception):</strong> How has interacting with your chatbot changed your perspective on traditional marriage contracts or biological childbearing?</li>
+                    </ul>
+                </div>
+                <div class="message-banner" style="margin-top:15px; font-size:13px; padding:10px 15px;">
+                    <strong>IRB Compliance:</strong> All interview narratives underwent anonymization filtering; platform scraper parameters respected robot.txt bounds.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 15: THANK YOU -->
+<div class="slide-container title-slide" id="slide15">
+    <h2 style="color: #faf8f4; font-size: 56px; font-family: 'Merriweather'; margin:0; font-weight:700;">Thank You</h2>
+    <p class="subtitle" style="color:#94a3b8; font-family:'Fira Code'; font-size:16px; margin-top:15px;">Questions & Academic Feedback Welcome</p>
+    <div style="margin-top: 50px; border-top:1px solid rgba(255,255,255,0.15); padding-top:25px; width:550px; text-align:center; color:#cbd5e1; font-size:15px; line-height:1.8;">
+        <i class="fa-solid fa-envelope" style="color:#8a6080;"></i> lu.gao@uchicago.edu &nbsp;|&nbsp; 
+        <a href="https://github.com/LuxarGao/her-new-shield" target="_blank" style="color:#cbd5e1; text-decoration:none;">
+            <i class="fa-brands fa-github" style="color:#8a6080;"></i> LuxarGao/her-new-shield
+        </a>
+    </div>
+</div>
+
+</body>
+</html>
