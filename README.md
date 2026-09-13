@@ -1,15 +1,21 @@
 # Her New Shield: Human-AI Companionship Corpus Pipeline
 
-This repository contains the replication code for the paper presented at **ACWS 2026**.
+This repository contains the research code and presentation for **ACWS 2026**.
 
-## System Pipeline
-1. `scraper.py`: Playwright-based autonomous asynchronous crawling script across Rednote and Twitter X.
-2. `analysis.py`: Localized NLP sentiment metrics and Structural Topic Modeling baseline algorithm.
+## Materials
 
-## Dataset Profile
-- Total Raw Corpus Vectors: N = 58,983
-- Post-cleaning Valid Vectors: N = 48,623
-- Semi-structured Interviews: N = 12
+- [ACWS presentation](slides/Affect-Driven_Digital_Literacy.pptx)
+- [`Scraper.py`](Scraper.py): Playwright-based asynchronous crawling across Rednote and X
+- [`Analysis.py`](Analysis.py): sentiment analysis and structural topic modeling baseline
+
+## Dataset profile
+
+- Raw corpus: 58,983 records
+- Cleaned corpus: 48,623 records
+- Semi-structured interviews: 12
+
+The underlying research data are not included in this public repository.
 
 ## Citation
-Gao, L. (2026). Her New Shield: Human-AI companionship as a Feminist Praxis and the Reimagining of Kinship in Post-Fertility China. ACWS 2026.
+
+Gao, L. (2026). *Her New Shield: Human-AI Companionship as a Feminist Praxis and the Reimagining of Kinship in Post-Fertility China*. ACWS 2026.
